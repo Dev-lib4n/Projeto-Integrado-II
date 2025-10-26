@@ -49,7 +49,7 @@ typedef struct{
 	int nf, TLNota;
 }tpvendas;
 
-// FUNÇÕES DE TELA
+// FUNÃ‡Ã•ES DE TELA
 
 void limpatela(int XI, int XF, int YI, int YF){
 	int i, j;
@@ -211,7 +211,7 @@ int buscavendas(FILE *ptrvenda, int nfaux){
 		return -1;
 }
 
-// FUNÇÕES DO CPF
+// FUNÃ‡Ã•ES DO CPF
 
 void convertecpf(char cpf[15]){
 	cpf[14]='\0';
@@ -282,7 +282,7 @@ int validcpf(char cpf[15]){
 		return 0;
 }
 
-//FUNÇÕES
+//FUNÃ‡Ã•ES
 
 void cadcliente(){
 	tpcliente cliente;
@@ -300,7 +300,7 @@ void cadcliente(){
 			do{
 				limpamensagem();
 				gotoxy(2,24);
-				printf("Escreva as informações do cliente...              Pressione ENTER para VOLTAR");
+				printf("Escreva as informaÃ§Ãµes do cliente...              Pressione ENTER para VOLTAR");
 				limpamonitor();
 				gotoxy(28,6);
 				printf("Cpf: ");
@@ -312,29 +312,29 @@ void cadcliente(){
 					limpamensagem();
 					textcolor(RED);
 					gotoxy(2,24);
-					printf("Usuário já cadastrado, digite um cpf diferente...");
+					printf("UsuÃ¡rio jÃ¡ cadastrado, digite um cpf diferente...");
 					Sleep(1500);
 					textcolor(WHITE);
 					limpamensagem();
 					gotoxy(2,24);
-					printf("Escreva as informações do cliente...");
+					printf("Escreva as informaÃ§Ãµes do cliente...");
 				}
 				if(validcpf(cliente.cpf)!=1 && strcmp(cliente.cpf, "\0")!=0){
 					limpamensagem();
 					textcolor(RED);
 					gotoxy(2,24);
-					printf("Cpf inválido, digite somente números...");
+					printf("Cpf invÃ¡lido, digite somente nÃºmeros...");
 					Sleep(1500);
 					textcolor(WHITE);
 					limpamensagem();
 					gotoxy(2,24);
-					printf("Escreva as informações do cliente...");
+					printf("Escreva as informaÃ§Ãµes do cliente...");
 				}
 			}while((buscacliente(cli, cliente.cpf)!=-1 || validcpf(cliente.cpf)!=1) && strcmp(cliente.cpf, "\0")!=0);
 			if(strcmp(cliente.cpf, "\0")!=0){
 				limpamensagem();
 				gotoxy(2,24);
-				printf("Escreva as informações do cliente...");
+				printf("Escreva as informaÃ§Ãµes do cliente...");
 				gotoxy(28,7);
 				printf("Nome: ");
 				fflush(stdin);
@@ -346,11 +346,11 @@ void cadcliente(){
 				printf("Data de nascimento: ");
 				scanf("%d %d %d", &cliente.nasc.dia, &cliente.nasc.mes, &cliente.nasc.ano);
 				gotoxy(28,10);
-				printf("Endereço da residência: ");
+				printf("EndereÃ§o da residÃªncia: ");
 				fflush(stdin);
 				gets(cliente.end.rua);
 				gotoxy(28,11);
-				printf("Número da residência: ");
+				printf("NÃºmero da residÃªncia: ");
 				scanf("%d", &cliente.end.num);
 				gotoxy(28,12);
 				printf("Cidade: ");
@@ -361,7 +361,7 @@ void cadcliente(){
 				fflush(stdin);
 				gets(cliente.end.estado);
 				gotoxy(28,14);
-				printf("País: ");
+				printf("PaÃ­s: ");
 				fflush(stdin);
 				gets(cliente.end.pais);
 				fseek(cli,0,2);
@@ -401,23 +401,23 @@ void consultacliente(){
 					limpamensagem();
 					textcolor(RED);
 					gotoxy(2,24);
-					printf("Usuário não encontrado, digite um cpf diferente...");
+					printf("UsuÃ¡rio nÃ£o encontrado, digite um cpf diferente...");
 					Sleep(1500);
 					textcolor(WHITE);
 					limpamensagem();
 					gotoxy(2,24);
-					printf("Escreva as informações do cliente...");
+					printf("Escreva as informaÃ§Ãµes do cliente...");
 				}
 				if(validcpf(cliente.cpf)!=1 && strcmp(cliente.cpf, "\0")!=0){
 					limpamensagem();
 					textcolor(RED);
 					gotoxy(2,24);
-					printf("Cpf inválido, digite somente números...");
+					printf("Cpf invÃ¡lido, digite somente nÃºmeros...");
 					Sleep(1500);
 					textcolor(WHITE);
 					limpamensagem();
 					gotoxy(2,24);
-					printf("Escreva as informações do cliente...");
+					printf("Escreva as informaÃ§Ãµes do cliente...");
 				}
 			}while((buscacliente(cli, cliente.cpf)==-1 || validcpf(cliente.cpf)!=1) && strcmp(cliente.cpf, "\0")!=0);
 			if(strcmp(cliente.cpf, "\0")!=0){
@@ -438,7 +438,7 @@ void consultacliente(){
 				gotoxy(28,12);
 				printf("Estado: %s", cliente.end.estado);
 				gotoxy(28,13);
-				printf("País: %s", cliente.end.pais);
+				printf("PaÃ­s: %s", cliente.end.pais);
 				limpamensagem();
 				gotoxy(2,24);
 				printf("Pressione qualquer tecla para continuar...");
@@ -466,10 +466,10 @@ void menuclientes(){
 		gotoxy(3,13);
 		printf("[C] - Excluir");
 		gotoxy(3,15);
-		printf("[D] - Relatório");
+		printf("[D] - RelatÃ³rio");
 		limpamensagem();
 		gotoxy(2,24);
-		printf("Selecione uma opção...                              Pressione ESC para VOLTAR");
+		printf("Selecione uma opÃ§Ã£o...                              Pressione ESC para VOLTAR");
 		gotoxy(24,24);
 		opc=toupper(getche());		
 		switch(opc){
@@ -483,7 +483,7 @@ void menuclientes(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -491,7 +491,7 @@ void menuclientes(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 				break;
@@ -499,7 +499,7 @@ void menuclientes(){
 				if(opc!=27){
 					limpatela(2, 79, 24, 24);
 					gotoxy(2,24);
-					printf("Opção inválida, selecione outra opção...");
+					printf("OpÃ§Ã£o invÃ¡lida, selecione outra opÃ§Ã£o...");
 					Sleep(1500);
 				}
 				break;
@@ -513,7 +513,7 @@ void menulaboratorios(){
 		limpamenu();
 		limpasubmenu();
 		gotoxy(5,6);
-		printf("---LABORATÓRIOS---");
+		printf("---LABORATÃ“RIOS---");
 		gotoxy(3,9);
 		printf("[A] - Cadastrar");
 		gotoxy(3,11);
@@ -521,10 +521,10 @@ void menulaboratorios(){
 		gotoxy(3,13);
 		printf("[C] - Excluir");
 		gotoxy(3,15);
-		printf("[D] - Relatório");
+		printf("[D] - RelatÃ³rio");
 		limpamensagem();
 		gotoxy(2,24);
-		printf("Selecione uma opção...                              Pressione ESC para VOLTAR");
+		printf("Selecione uma opÃ§Ã£o...                              Pressione ESC para VOLTAR");
 		gotoxy(24,24);
 		opc=toupper(getche());		
 		switch(opc){
@@ -532,7 +532,7 @@ void menulaboratorios(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -540,7 +540,7 @@ void menulaboratorios(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -548,7 +548,7 @@ void menulaboratorios(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -556,7 +556,7 @@ void menulaboratorios(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 				break;
@@ -564,7 +564,7 @@ void menulaboratorios(){
 				if(opc!=27){
 					limpatela(2, 79, 24, 24);
 					gotoxy(2,24);
-					printf("Opção inválida, selecione outra opção...");
+					printf("OpÃ§Ã£o invÃ¡lida, selecione outra opÃ§Ã£o...");
 					Sleep(1500);
 				}
 		}
@@ -584,12 +584,12 @@ void menuprodutos(){
 		gotoxy(3,13);
 		printf("[C] - Excluir");
 		gotoxy(3,15);
-		printf("[D] - Relatório");
+		printf("[D] - RelatÃ³rio");
 		gotoxy(3,17);
-		printf("[E] - Promoção");
+		printf("[E] - PromoÃ§Ã£o");
 		limpamensagem();
 		gotoxy(2,24);
-		printf("Selecione uma opção...                              Pressione ESC para VOLTAR");
+		printf("Selecione uma opÃ§Ã£o...                              Pressione ESC para VOLTAR");
 		gotoxy(24,24);
 		opc=toupper(getche());		
 		switch(opc){
@@ -597,7 +597,7 @@ void menuprodutos(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -605,7 +605,7 @@ void menuprodutos(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -613,7 +613,7 @@ void menuprodutos(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -621,7 +621,7 @@ void menuprodutos(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 				break;
@@ -629,7 +629,7 @@ void menuprodutos(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 				break;
@@ -637,7 +637,7 @@ void menuprodutos(){
 				if(opc!=27){
 					limpatela(2, 79, 24, 24);
 					gotoxy(2,24);
-					printf("Opção inválida, selecione outra opção...");
+					printf("OpÃ§Ã£o invÃ¡lida, selecione outra opÃ§Ã£o...");
 					Sleep(1500);
 				}
 		}
@@ -657,10 +657,10 @@ void menuvendas(){
 		gotoxy(3,13);
 		printf("[C] - Excluir");
 		gotoxy(3,15);
-		printf("[D] - Relatório");
+		printf("[D] - RelatÃ³rio");
 		limpamensagem();
 		gotoxy(2,24);
-		printf("Selecione uma opção...                              Pressione ESC para VOLTAR");
+		printf("Selecione uma opÃ§Ã£o...                              Pressione ESC para VOLTAR");
 		gotoxy(24,24);
 		opc=toupper(getche());
 		
@@ -669,7 +669,7 @@ void menuvendas(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -677,7 +677,7 @@ void menuvendas(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -685,7 +685,7 @@ void menuvendas(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -693,7 +693,7 @@ void menuvendas(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 				break;
@@ -701,7 +701,7 @@ void menuvendas(){
 				if(opc!=27){
 					limpatela(2, 79, 24, 24);
 					gotoxy(2,24);
-					printf("Opção inválida, selecione outra opção...");
+					printf("OpÃ§Ã£o invÃ¡lida, selecione outra opÃ§Ã£o...");
 					Sleep(1500);
 				}
 		}
@@ -713,18 +713,18 @@ void menurelatorios(){
 		limpamenu();
 		limpasubmenu();
 		gotoxy(6,6);
-		printf("---RELATÓRIOS---");
+		printf("---RELATÃ“RIOS---");
 		gotoxy(3,9);
 		printf("[A] - Prod. para vencer");
 		gotoxy(3,11);
 		printf("[B] - Baixo estoque");
 		gotoxy(3,13);
-		printf("[C] - Vendas no mês");
+		printf("[C] - Vendas no mÃªs");
 		gotoxy(3,15);
-		printf("[D] - Média de compra");
+		printf("[D] - MÃ©dia de compra");
 		limpamensagem();
 		gotoxy(2,24);
-		printf("Selecione uma opção...                              Pressione ESC para VOLTAR");
+		printf("Selecione uma opÃ§Ã£o...                              Pressione ESC para VOLTAR");
 		gotoxy(24,24);
 		opc=toupper(getche());
 		switch(opc){
@@ -732,7 +732,7 @@ void menurelatorios(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -740,7 +740,7 @@ void menurelatorios(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -748,7 +748,7 @@ void menurelatorios(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 			break;
@@ -756,7 +756,7 @@ void menurelatorios(){
 				limpamensagem();
 				textcolor(RED);
 				gotoxy(2,24);
-				printf("Em Construção...");
+				printf("Em ConstruÃ§Ã£o...");
 				Sleep(1500);
 				textcolor(WHITE);
 				break;
@@ -764,7 +764,7 @@ void menurelatorios(){
 				if(opc!=27){
 					limpatela(2, 79, 24, 24);
 					gotoxy(2,24);
-					printf("Opção inválida, selecione outra opção...");
+					printf("OpÃ§Ã£o invÃ¡lida, selecione outra opÃ§Ã£o...");
 					Sleep(1500);
 				}
 		}
@@ -780,16 +780,16 @@ void menu(void){
 		gotoxy(3,9);
 		printf("[A] - Clientes");
 		gotoxy(3,11);
-		printf("[B] - Laboratórios");
+		printf("[B] - LaboratÃ³rios");
 		gotoxy(3,13);
 		printf("[C] - Produtos");
 		gotoxy(3,15);
 		printf("[D] - Vendas");
 		gotoxy(3,17);
-		printf("[E] - Relatórios");
+		printf("[E] - RelatÃ³rios");
 		limpamensagem();
 		gotoxy(2,24);
-		printf("Selecione uma opção...                                Pressione ESC para SAIR");
+		printf("Selecione uma opÃ§Ã£o...                                Pressione ESC para SAIR");
 		gotoxy(24,24);
 		opc=toupper(getche());	
 		switch(opc){
@@ -812,7 +812,7 @@ void menu(void){
 				if(opc!=27){
 					limpatela(2, 79, 24, 24);
 					gotoxy(2,24);
-					printf("Opção inválida, selecione outra opção...");
+					printf("OpÃ§Ã£o invÃ¡lida, selecione outra opÃ§Ã£o...");
 					Sleep(1500);
 				}
 		}
@@ -825,7 +825,7 @@ void menu(void){
 				if(opc!='S' && opc!='N'){
 					limpatela(2, 79, 24, 24);
 					gotoxy(2,24);
-					printf("Opção inválida, selecione outra opção...");
+					printf("OpÃ§Ã£o invÃ¡lida, selecione outra opÃ§Ã£o...");
 					Sleep(1500);
 				}
 			}while(opc!='S' && opc!='N');
